@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -13,6 +12,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "./ui/textarea";
 import { Plus, CirclePlus } from 'lucide-react';
 import { newProjectAction } from "@/actions/newProjectAction";
+import { SubmitButton } from "./submitButton";
 
 export function CreateProject({ variant = "default", icon = "plus", className = "" }) {
   const Icon = icon === "circle-plus" ? CirclePlus : Plus;
@@ -57,11 +57,7 @@ export function CreateProject({ variant = "default", icon = "plus", className = 
             <Label htmlFor="description">Description</Label>
             <Textarea name="description" id="description" placeholder="Description (optional)" />
           </div>
-          <DialogClose>
-          <Button type="submit" className="w-full sm:w-auto">
-            Save changes
-          </Button>
-          </DialogClose>
+            <SubmitButton />
         </form>
       </DialogContent>
     </Dialog>

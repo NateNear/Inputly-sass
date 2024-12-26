@@ -1,7 +1,7 @@
 
 import { drizzle } from 'drizzle-orm/postgres-js'
 import postgres from 'postgres'
-import { projects } from '@/db/schema'
+import { projects, feedbacks } from '@/db/schema'
 import { auth } from "@clerk/nextjs/server";
 import { eq } from 'drizzle-orm';
 
@@ -17,5 +17,10 @@ export async function getUserProjects() {
       throw new Error('User not authenticated');
     }
     return db.select().from(projects).where(eq(projects.user_id, userId));
+  }
+
+  export async function getFeedbacks(projectId: number) {
+
+    return db.select().from(feedbacks).where(eq(feedbacks.project_id, projectId));
   }
 

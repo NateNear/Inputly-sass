@@ -3,6 +3,7 @@
 import { db } from "@/index";
 import { auth } from "@clerk/nextjs/server";
 import { projects } from '@/db/schema'
+import { redirect } from "next/navigation";
 
 export async function newProjectAction(formData: FormData) {
     const { userId } = await auth();
@@ -14,5 +15,7 @@ export async function newProjectAction(formData: FormData) {
       user_id: userId,
     }
 
-    await db.insert(projects).values(newProject)
+    const [projectId] = await db.insert(projects).values(newProject).returning({id: projects.id})
+    console.log("projectId", projectId.id)
+    redirect(`/instructions/${projectId.id}/`)
 }
