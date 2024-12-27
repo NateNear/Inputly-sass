@@ -12,5 +12,6 @@ export const projects = pgTable('projects', {
 export const feedbacks = pgTable('feedbacks', {
   project_id: integer('project_id').notNull().references(() => projects.id),
   feedback: varchar('feedback'),
-  stars: integer('stars')
+  stars: integer('stars'),
+  email: text('email')
 });
