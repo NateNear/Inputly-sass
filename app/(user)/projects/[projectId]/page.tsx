@@ -9,7 +9,7 @@ const FeedbacksPage = async({ params }: { params: { projectId: number } }) => {
   
   if(feedbacks.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-50 p-4 flex items-center justify-center">
+      <div className="min-h-screen p-4 flex items-center justify-center">
         <Card className="w-full max-w-3xl">
           <CardContent className="p-12 text-center">
             <div className="text-gray-400">
