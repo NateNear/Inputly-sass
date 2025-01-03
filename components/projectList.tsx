@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -9,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { getUserProjects } from "@/index";
+import { GotToProjectButton } from "./gotToProjectButton";
 
 export async function ProjectList() {
   const projectsOfUser = await getUserProjects();
@@ -28,9 +28,8 @@ export async function ProjectList() {
           <CardContent>
             <p className="line-clamp-3">{project.description}</p>
           </CardContent>
-          <CardFooter className="flex justify-between">
-            <Button variant="outline">Cancel</Button>
-            <Button>Deploy</Button>
+          <CardFooter className="flex justify-start">
+            <GotToProjectButton projectId = {project.id} />
           </CardFooter>
         </Card>
       ))}
