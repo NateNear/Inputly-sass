@@ -2,6 +2,8 @@ import React from 'react';
 import { Label } from '@/components/ui/label';
 import { CreateProject } from "@/components/createProject";
 import { ProjectList } from '@/components/projectList';
+import { SubscribeBtn } from '@/app/(user)/payments/subscribe-btn'
+import { monthlyPlanId, yearlyPlanId } from '@/lib/payments';
 
 async function Dashboard() {
   // const users = await db.select().from(projects) 
@@ -13,6 +15,7 @@ async function Dashboard() {
         Your Projects
         <div className="ml-2">
         <CreateProject variant="circle" icon="circle-plus" />
+          <SubscribeBtn price={monthlyPlanId}/>
         </div>
       </Label>
       </div>

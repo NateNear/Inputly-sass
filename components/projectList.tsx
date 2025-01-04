@@ -12,7 +12,7 @@ import { GotToProjectButton } from "./gotToProjectButton";
 
 export async function ProjectList() {
   const projectsOfUser = await getUserProjects();
-  console.log("total Projects", projectsOfUser);
+  // console.log("total Projects", projectsOfUser);
 
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-4 py-6">

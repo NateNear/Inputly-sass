@@ -1,14 +1,14 @@
 
 import { drizzle } from 'drizzle-orm/postgres-js'
 import postgres from 'postgres'
-import { projects, feedbacks } from '@/db/schema'
+import { projects, feedbacks, subscriptions } from '@/db/schema'
 import { auth } from "@clerk/nextjs/server";
 import { eq } from 'drizzle-orm';
 
 const connectionString = process.env.DATABASE_URL
 
 export const client = postgres(connectionString, { prepare: false })
-export const db = drizzle(client);
+export const db = drizzle(client, { schema: { projects, feedbacks, subscriptions } });
 export const totalProjects = await db.select().from(projects) 
 export async function getUserProjects() {
     const { userId } = await auth();
