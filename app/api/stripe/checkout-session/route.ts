@@ -11,10 +11,16 @@ export async function POST(req: Request) {
   if (!userId) {
     return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401 });
   }
+
+  // Determine plan type based on price ID
+  const plan = price.includes('month') ? 'monthly' : 'yearly';
+
   const userSubscription = await db.query.subscriptions.findFirst({
     where: eq(subscriptions.userId, userId),
   });
-  console.log("userSubscriptions", userSubscription)
+  
+  console.log("userSubscriptions", userSubscription);
+  
   let customer;
   if (userSubscription) {
     // get the stripe customer
@@ -40,6 +46,7 @@ export async function POST(req: Request) {
     await db.insert(subscriptions).values({
       userId,
       stripeCustomerId: customer.id,
+      plan: 'free', // Set initial plan type as free
     });
   }
 
@@ -60,10 +67,23 @@ export async function POST(req: Request) {
           price,
           quantity,
         },
-      ]
+      ],
+      metadata: {
+        plan,
+        userId,
+      }
     });
 
     if (session) {
+      await db
+        .update(subscriptions)
+        .set({ 
+          plan,
+          stripeSubscriptionId: session.subscription as string,
+          subscribed: true
+        })
+        .where(eq(subscriptions.userId, userId));
+
       return new Response(JSON.stringify({ sessionId: session.id }), { status: 200 });
     } else {
       return new Response(JSON.stringify({ error: "Failed to create a session" }), { status: 500 });

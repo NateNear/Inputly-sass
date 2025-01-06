@@ -23,3 +23,26 @@ export async function getUserProjects() {
     return db.select().from(feedbacks).where(eq(feedbacks.project_id, projectId));
   }
 
+  export async function getUserSubscriptionAndProjects() {
+    const { userId } = await auth();
+    if (!userId) {
+      throw new Error('User not authenticated');
+    }
+  
+    const userSubscription = await db
+      .select()
+      .from(subscriptions)
+      .where(eq(subscriptions.userId, userId))
+      .limit(1);
+  
+    const userProjects = await db
+      .select()
+      .from(projects)
+      .where(eq(projects.user_id, userId));
+  
+    return {
+      subscription: userProjects[0] || { planType: 'free' },
+      projectCount: userProjects.length
+    };
+  }
+
