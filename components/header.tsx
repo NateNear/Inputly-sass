@@ -25,7 +25,7 @@ function Header() {
                 <div 
                     className='rounded-full flex items-center justify-between px-4 sm:px-6 w-full 
                     sm:w-[90%] md:w-[85%] h-16 border-2 border-t-[1px] shadow-lg 
-                    transition-transform transform hover:scale-102 hover:shadow-md'
+                    transition-transform transform hover:scale-102 hover:shadow-md mb-2'
                 >  
                     <HeaderLogo/>
                     <div className='flex items-center gap-2 sm:gap-4'>
