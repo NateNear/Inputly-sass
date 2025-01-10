@@ -31,11 +31,6 @@ export async function ProjectList() {
         {!canCreateMore && (
           <div className="text-red-500 text-sm">
             You&apos;ve reached your project limit. 
-            {subscription.plan === 'free' && (
-              <Button variant="link" className="text-indigo-600" onClick={() => window.location.href = '/pricing'}>
-                Upgrade your plan
-              </Button>
-            )}
           </div>
         )}
       </div>

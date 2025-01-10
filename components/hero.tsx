@@ -17,7 +17,7 @@ export default function Hero() {
 
                 <div className="flex flex-wrap justify-center items-center gap-3 mb-8 scale-up-animation">
                     <a
-                        href="https://github.com/yourusername/project"
+                        href="https://github.com/NateNear/Inputly-sass"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:scale-105 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-100 dark:bg-white/5 hover:bg-gray-200 dark:hover:bg-white/10 border border-gray-300 dark:border-white/10 transition-colors"
@@ -39,7 +39,7 @@ export default function Hero() {
                     </h1>
                     <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                         Collect, analyze, and leverage customer feedback to build products your users truly love. 
-                        Powered by advanced AI for deeper insights.
+                        Soon to be powered by advanced AI for deeper insights.
                     </p>
                 </div>
 
@@ -50,7 +50,7 @@ export default function Hero() {
                         variant="outline"
                         className="border-gray-300 dark:border-white/20 text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 px-8 rounded-full h-12 transition-all duration-300 hover:scale-105"
                     >
-                        Book a Demo
+                        Watch the Demo
                     </Button>
                 </div>
 

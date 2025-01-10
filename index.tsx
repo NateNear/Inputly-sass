@@ -41,7 +41,7 @@ export async function getUserProjects() {
       .where(eq(projects.user_id, userId));
   
     return {
-      subscription: userProjects[0] || { planType: 'free' },
+      subscription: userSubscription[0] || { planType: 'free' },
       projectCount: userProjects.length
     };
   }
