@@ -46,3 +46,20 @@ export async function getUserProjects() {
     };
   }
 
+  export async function deleteProject(projectId: number) {
+    const { userId } = await auth();
+    if (!userId) {
+      throw new Error('User not authenticated');
+    }
+
+    const deletedCount = await db
+      .delete()
+      .from(projects)
+      .where(eq(projects.id, projectId))
+      .and(eq(projects.user_id, userId));
+  
+    if (!deletedCount) {
+      throw new Error('Project not found or unauthorized action');
+    }
+  }
+  
