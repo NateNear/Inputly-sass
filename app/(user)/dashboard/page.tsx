@@ -10,7 +10,7 @@ const Dashboard = async () => {
         <div className="flex justify-between items-center">
           <div className="ml-4 flex items-center space-x-3">
             <Boxes className="w-8 h-8 text-indigo-600" />
-            <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-50">Dashboard</h1>
           </div>
           <div className="flex items-center space-x-4">
             {/* <CreateProject 

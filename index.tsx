@@ -4,6 +4,7 @@ import postgres from 'postgres'
 import { projects, feedbacks, subscriptions } from '@/db/schema'
 import { auth } from "@clerk/nextjs/server";
 import { eq } from 'drizzle-orm';
+import { revalidatePath } from "next/cache";
 
 const connectionString = process.env.DATABASE_URL
 
@@ -51,15 +52,11 @@ export async function getUserProjects() {
     if (!userId) {
       throw new Error('User not authenticated');
     }
-
-    const deletedCount = await db
-      .delete()
-      .from(projects)
-      .where(eq(projects.id, projectId))
-      .and(eq(projects.user_id, userId));
   
-    if (!deletedCount) {
-      throw new Error('Project not found or unauthorized action');
-    }
+    await db.delete(feedbacks).where(eq(feedbacks.project_id, projectId));
+      
+    await db.delete(projects).where(eq(projects.id, projectId));
+    
+    revalidatePath('/projects');
   }
   

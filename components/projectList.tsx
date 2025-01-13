@@ -10,7 +10,7 @@ import {
 import { getUserProjects, getUserSubscriptionAndProjects } from "@/index";
 import { GotToProjectButton } from "./gotToProjectButton";
 import { PROJECT_LIMITS, SUBSCRIPTION_PLANS } from "@/utils/subscriptions";
-import { Button } from "@/components/ui/button";
+import { DeleteProjectButton } from "./deleteButton";
 
 
 export async function ProjectList() {
@@ -41,6 +41,7 @@ export async function ProjectList() {
             className="h-[200px] w-[350px] mx-auto hover:scale-105 transition shadow-sm hover:shadow-lg"
             key={project.id}
           >
+            <DeleteProjectButton projectId={project.id} />
             <CardHeader>
               <CardTitle>{project.name}</CardTitle>
               <CardDescription>{project.url}</CardDescription>
