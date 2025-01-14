@@ -4,9 +4,9 @@ import { projects, feedbacks } from '@/db/schema';
 import { db } from '@/index';
 import { eq } from 'drizzle-orm';
 
-type PageProps = Promise<{
-  projectId: number;
-}>;
+type PageProps = {
+  projectId: string;
+};
 
 export async function DELETE(
   request: Request,
@@ -18,7 +18,7 @@ export async function DELETE(
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
-    const projectId = await params.projectId;
+    const projectId = parseInt(params.projectId);
 
     
     const project = await db.select()
