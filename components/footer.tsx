@@ -30,7 +30,7 @@ export default function Footer() {
                         <h4 className="text-gray-900 font-semibold mb-2">Follow Us</h4>
                         <div className="flex items-center gap-4">
                             <a
-                                href="https://twitter.com/yourprofile"
+                                href="https://x.com/NateNear6"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-600 hover:text-gray-900 transition-all"
@@ -38,7 +38,7 @@ export default function Footer() {
                                 <Twitter className="w-5 h-5" />
                             </a>
                             <a
-                                href="https://github.com/yourprofile"
+                                href="https://github.com/NateNear"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-600 hover:text-gray-900 transition-all"
@@ -46,7 +46,7 @@ export default function Footer() {
                                 <Github className="w-5 h-5" />
                             </a>
                             <a
-                                href="https://linkedin.com/in/yourprofile"
+                                href="https://linkedin.com/in/aharindrareddy"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-600 hover:text-gray-900 transition-all"

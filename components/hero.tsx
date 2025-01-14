@@ -65,8 +65,8 @@ export default function Hero() {
                             description: 'Track feedback trends and insights live'
                         },
                         {
-                            title: 'Team Collaboration',
-                            description: 'Work together seamlessly on feedback'
+                            title: 'Seamless Integration',
+                            description: 'Easily integrate with your existing tools and services.'
                         }
                     ].map((feature, index) => (
                         <div
