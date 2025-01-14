@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Star, Sparkles } from "lucide-react";
 import './css/heroPage.css';
 import { GotToDashboardButton } from './goToDashboardButton';
+import { TryDemoButton } from './tryDemoButton';
 
 export default function Hero() {
     return (
@@ -45,13 +46,7 @@ export default function Hero() {
 
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16 ">
                     <GotToDashboardButton />
-                    <Button 
-                        size="lg"
-                        variant="outline"
-                        className="border-gray-300 dark:border-white/20 text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 px-8 rounded-full h-12 transition-all duration-300 hover:scale-105"
-                    >
-                        Watch the Demo
-                    </Button>
+        <TryDemoButton />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto scale-up-delay-3">

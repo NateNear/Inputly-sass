@@ -1,20 +1,21 @@
 'use client'
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-import { ChevronRight } from "lucide-react";
 
 export function TryDemoButton() {
   const router = useRouter();
 
   const handleNavigation = () => {
-    router.push(`/dashboard`);
+    router.push(`/demo`);
   };
 
   return (
-    <Button onClick={handleNavigation}
-     className="bg-indigo-600 hover:bg-indigo-700 text-white">
-    Try Demo
-    <ChevronRight className="ml-2 h-4 w-4" />
+    <Button 
+      size="lg"
+      variant="outline"
+      className="border-gray-300 dark:border-white/20 text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 px-8 rounded-full h-12 transition-all duration-300 hover:scale-105"
+      onClick={handleNavigation}> 
+      Watch the Demo
 </Button>
   );
 }
