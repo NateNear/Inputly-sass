@@ -1,12 +1,14 @@
-'use client';
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { CopyButton } from '@/components/copyButton';
 import { Code2, Globe, Rocket } from 'lucide-react';
 
-const CodeDisplayPage = ({ params }: { params: { projectId: string } }) => {
-  const { projectId } = params;
+type PageProps = Promise<{
+    projectId: string;
+  }>;
+
+async function CodeDisplayPage  ({ params }: { params: PageProps }) {
+  const { projectId } = await params;
   const code = `
     <script src="${process.env.WIDGET_URL}widget.umd.js"> </script>
     <feedback-widget title="" project="${projectId}"> </feedback-widget>
