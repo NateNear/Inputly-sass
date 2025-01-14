@@ -18,7 +18,6 @@ import { SubmitButton } from "./submitButton";
 import { monthlyPlanId, yearlyPlanId } from '@/lib/payments';
 import { SubscribeBtn } from "@/app/(user)/payments/subscribe-btn";
 
-
 const PROJECT_LIMITS: { [key: string]: number } = {
   free: 3,
   monthly: 10,
@@ -29,11 +28,18 @@ export function CreateProject({
   variant = "default", 
   icon = "plus", 
   className = "",
-  subscription = { plan: 'free' },
+  subscription,
   projectCount = 3
+}: {
+  variant?: "default" | "circle";
+  icon?: "plus" | "circle-plus";
+  className?: string;
+  subscription?: { plan: string } | null;
+  projectCount?: number;
 }) {
   const Icon = icon === "circle-plus" ? CirclePlus : Plus;
-  const projectLimit = PROJECT_LIMITS[subscription?.plan || 'free'];
+  const planType = subscription?.plan || 'free';
+  const projectLimit = PROJECT_LIMITS[planType] || PROJECT_LIMITS.free;
   const canCreateMore = projectCount < projectLimit;
   
   return (
@@ -86,7 +92,7 @@ export function CreateProject({
           <DialogHeader>
             <DialogTitle className="text-xl font-semibold text-center">Project Limit Reached</DialogTitle>
             <DialogDescription className="text-center mt-4">
-              You&apos;ve reached the maximum limit of {projectLimit} {projectLimit === 1 ? 'project' : 'projects'} on your {subscription.plan} plan.
+              You&apos;ve reached the maximum limit of {projectLimit} {projectLimit === 1 ? 'project' : 'projects'} on your {planType} plan.
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col gap-6 items-center mt-4">
