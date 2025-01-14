@@ -25,7 +25,7 @@ export function HeaderButtons({ isDashboard, subscription, projectCount }: Heade
             <ModeToggle/>
             {isDashboard && (
                 <CreateProject 
-                    subscription={subscription}
+                    subscription={{ plan: subscription }}
                     projectCount={projectCount}
                 />
             )}
