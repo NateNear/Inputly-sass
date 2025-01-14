@@ -66,7 +66,8 @@ export async function POST(req: Request) {
       metadata: {
         plan,
         userId,
-      }
+      },
+      cancel_url: `${baseUrl}`
     });
 
     if (session) {

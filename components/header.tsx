@@ -14,10 +14,15 @@ import { ModeToggle } from './dark-mode'
 import HeaderLogo from './headerLogo'
 import { CreateProject } from '@/components/createProject'
 
+interface SubscriptionData {
+    subscription: string; 
+    projectCount: number; 
+  }
+
 function Header() {
     const pathname = usePathname();
     const isDashboard = pathname === "/dashboard";
-    const [subscriptionData, setSubscriptionData] = useState(null);
+    const [subscriptionData, setSubscriptionData] = useState<SubscriptionData | null>(null);
 
     useEffect(() => {
         if (isDashboard) {
@@ -44,7 +49,7 @@ function Header() {
                     <ModeToggle/>
                     {isDashboard && (
                         <CreateProject 
-                            subscription={subscriptionData?.subscription}
+                            subscription={{ plan: subscriptionData?.subscription ?? '' }}
                             projectCount={subscriptionData?.projectCount}
                         />
                     )}

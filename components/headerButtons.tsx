@@ -12,7 +12,13 @@ import {
 import { ModeToggle } from './dark-mode'
 import { CreateProject } from '@/components/createProject'
 
-export function HeaderButtons({ isDashboard, subscription, projectCount }) {
+interface HeaderButtonsProps {
+    isDashboard: boolean;
+    subscription: string; 
+    projectCount: number; 
+}
+
+export function HeaderButtons({ isDashboard, subscription, projectCount }: HeaderButtonsProps) {
     console.log("dashboard", isDashboard, subscription, projectCount)
     return (
         <div className='flex items-center gap-2 sm:gap-4'>

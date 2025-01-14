@@ -19,7 +19,7 @@ import { monthlyPlanId, yearlyPlanId } from '@/lib/payments';
 import { SubscribeBtn } from "@/app/(user)/payments/subscribe-btn";
 
 
-const PROJECT_LIMITS = {
+const PROJECT_LIMITS: { [key: string]: number } = {
   free: 3,
   monthly: 10,
   pro: Infinity

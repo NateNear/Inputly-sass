@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
-export function GotToProjectButton({ projectId }) {
+export function GotToProjectButton({ projectId }: { projectId: string }) {
   const router = useRouter();
 
   const handleNavigation = () => {

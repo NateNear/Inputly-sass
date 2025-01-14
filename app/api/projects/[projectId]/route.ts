@@ -2,11 +2,11 @@ import { NextResponse } from 'next/server';
 import { auth } from "@clerk/nextjs/server";
 import { projects, feedbacks } from '@/db/schema';
 import { db } from '@/index';
-import { eq } from 'drizzle-orm';
+import { eq, and } from 'drizzle-orm';
 
-type PageProps = {
+type PageProps = Promise<{
   projectId: string;
-};
+}>;
 
 export async function DELETE(
   request: Request,
@@ -18,14 +18,13 @@ export async function DELETE(
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
-    const projectId = parseInt(params.projectId);
+    const projectId = parseInt((await params).projectId);
 
-    
-    const project = await db.select()
-      .from(projects)
-      .where(eq(projects.id, projectId))
-      .where(eq(projects.user_id, userId))
-      .limit(1);
+    const project = await db
+    .select()
+    .from(projects)
+    .where(and(eq(projects.id, projectId), eq(projects.user_id, userId)))
+    .limit(1);
 
     if (!project.length) {
       return new NextResponse("Not found", { status: 404 });
