@@ -30,7 +30,7 @@ const Dashboard = async () => {
         </div>
       </div>
 
-      <div className="bg-gray-50 rounded-2xl p-6 shadow-sm">
+      <div className="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 shadow-sm">
         <div className="space-y-6">
           <ProjectList />
         </div>

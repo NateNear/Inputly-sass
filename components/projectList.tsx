@@ -10,7 +10,7 @@ import {
 import { getUserProjects, getUserSubscriptionAndProjects } from "@/index";
 import { GotToProjectButton } from "./gotToProjectButton";
 import { PROJECT_LIMITS, SUBSCRIPTION_PLANS } from "@/utils/subscriptions";
-import { DeleteProjectButton } from "./deleteButton";
+import { DeleteProjectButton } from "./deleteProjectButton";
 
 
 export async function ProjectList() {
@@ -23,7 +23,7 @@ export async function ProjectList() {
     <div className="space-y-6">
       <div className="flex justify-between items-center px-4">
         <div>
-          <h2 className="text-2xl font-bold">Your Projects</h2>
+          <h2 className="text-2xl font-bold dark:text-gray-50">Your Projects</h2>
           <p className="text-sm text-gray-500">
             {projectCount} / {projectLimit === Infinity ? '∞' : projectLimit} projects used
           </p>
