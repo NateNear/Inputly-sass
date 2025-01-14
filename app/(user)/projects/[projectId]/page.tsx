@@ -40,7 +40,7 @@ const FeedbacksPage = async({ params }: { params: PageProps }) => {
     );
   }
 
-  const avgRating = feedbacks.reduce((acc, curr) => acc + curr.stars, 0) / feedbacks.length;
+  const avgRating = feedbacks.reduce((acc, curr) => acc + (curr.stars ?? 0), 0) / feedbacks.length; 
 
   return (
     <div className="min-h-screen p-8">
@@ -114,7 +114,7 @@ const FeedbacksPage = async({ params }: { params: PageProps }) => {
                 <div>
                   <p className="text-sm font-medium text-gray-500 uppercase tracking-wider">Latest Response</p>
                   <p className="text-4xl font-bold text-gray-900 mt-2">
-                    {new Date(feedbacks[0].created_at).toLocaleDateString()}
+                    Invalid Date
                   </p>
                 </div>
                 <div className="w-14 h-14 bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center shadow-inner">
@@ -164,7 +164,7 @@ const FeedbacksPage = async({ params }: { params: PageProps }) => {
                         <div className="flex items-center">
                           <div className="w-10 h-10 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-full flex items-center justify-center shadow-inner">
                             <span className="text-sm font-medium text-indigo-600">
-                              {feedback.email[0].toUpperCase()}
+                              {feedback.email ? feedback.email[0].toUpperCase() : ''}
                             </span>
                           </div>
                           <div className="ml-4">
@@ -182,7 +182,7 @@ const FeedbacksPage = async({ params }: { params: PageProps }) => {
                               key={i}
                               size={16}
                               className={`${
-                                i < feedback.stars
+                                i < (feedback.stars ?? 0)
                                   ? 'text-yellow-400 fill-yellow-400 drop-shadow-sm'
                                   : 'text-gray-200'
                               }`}
