@@ -57,11 +57,11 @@ const PricingTier = ({
     <div className="mt-auto">
       
       <SubscribeBtn 
-        className={`w-full ${
-          isPopular 
-            ? 'bg-indigo-600 hover:bg-indigo-700 text-white' 
-            : 'bg-gray-100 text-indigo-700 hover:bg-gray-200 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600'
-        }`}
+        // className={`w-full ${
+        //   isPopular 
+        //     ? 'bg-indigo-600 hover:bg-indigo-700 text-white' 
+        //     : 'bg-gray-100 text-indigo-700 hover:bg-gray-200 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600'
+        // }`}
         price={priceId}
       >
         {price === 'Free' ? 'Get Started' : 'Subscribe Now'}

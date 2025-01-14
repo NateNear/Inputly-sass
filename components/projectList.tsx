@@ -9,14 +9,14 @@ import {
 } from "@/components/ui/card";
 import { getUserProjects, getUserSubscriptionAndProjects } from "@/index";
 import { GotToProjectButton } from "./gotToProjectButton";
-import { PROJECT_LIMITS, SUBSCRIPTION_PLANS } from "@/utils/subscriptions";
+import { PROJECT_LIMITS } from "@/utils/subscriptions";
 import { DeleteProjectButton } from "./deleteProjectButton";
 
 
 export async function ProjectList() {
   const projectsOfUser = await getUserProjects();
   const { subscription, projectCount } = await getUserSubscriptionAndProjects();
-  const projectLimit = PROJECT_LIMITS[subscription.plan || 'free'];
+  const projectLimit = PROJECT_LIMITS[subscription.plan as keyof typeof PROJECT_LIMITS || 'free'];
   const canCreateMore = projectCount < projectLimit;
 
   return (
@@ -50,7 +50,7 @@ export async function ProjectList() {
               <p className="line-clamp-3">{project.description}</p>
             </CardContent>
             <CardFooter className="flex justify-start">
-              <GotToProjectButton projectId={project.id} />
+              <GotToProjectButton projectId={project.id.toString()} />
             </CardFooter>
           </Card>
         ))}

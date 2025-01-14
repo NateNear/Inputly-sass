@@ -1,11 +1,12 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { getStripe } from "@/lib/stripe-client";
 import { Loader2 } from "lucide-react";
 
 type Props = {
-  price: string
+  price: string;
+  children?: ReactNode;
 }
 
 export const SubscribeBtn = ({ price }: Props) => {
