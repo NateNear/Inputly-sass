@@ -5,7 +5,11 @@ import { getFeedbacks } from '@/index';
 import Link from 'next/link';
 import { Code2 } from 'lucide-react';
 
-const FeedbacksPage = async({ params }: { params: { projectId: number } }) => {
+type PageProps = Promise<{
+  projectId: number;
+}>;
+
+const FeedbacksPage = async({ params }: { params: PageProps }) => {
   const { projectId } = await params;
   const feedbacks = await getFeedbacks(projectId);
   
