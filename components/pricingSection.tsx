@@ -1,6 +1,6 @@
 import React from 'react';
 import { Check, X } from "lucide-react";
-import { SubscribeBtn } from '@/app/(user)/payments/subscribe-btn';
+import { SubscribeBtn } from '@/app/(user)/payments/pricingSectionBtn';
 import { monthlyPlanId, yearlyPlanId } from '@/lib/payments';
 
 const PricingTier = ({ 
@@ -57,12 +57,8 @@ const PricingTier = ({
     <div className="mt-auto">
       
       <SubscribeBtn 
-        // className={`w-full ${
-        //   isPopular 
-        //     ? 'bg-indigo-600 hover:bg-indigo-700 text-white' 
-        //     : 'bg-gray-100 text-indigo-700 hover:bg-gray-200 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600'
-        // }`}
         price={priceId}
+        isPopular={isPopular}
       >
         {price === 'Free' ? 'Get Started' : 'Subscribe Now'}
       </SubscribeBtn>
