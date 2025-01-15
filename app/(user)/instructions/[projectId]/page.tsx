@@ -11,7 +11,7 @@ async function CodeDisplayPage  ({ params }: { params: PageProps }) {
   const { projectId } = await params;
   const code = `
     <script src="${process.env.WIDGET_URL}widget.umd.js"> </script>
-    <feedback-widget title="" project="${projectId}"> </feedback-widget>
+    <feedback-widget title="" projectId="${projectId}"> </feedback-widget>
   `;
 
   const steps = [
