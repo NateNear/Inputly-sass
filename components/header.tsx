@@ -38,7 +38,7 @@ function Header() {
     }, [isDashboard]);
 
     return (
-        <header className='flex justify-center pt-5 px-4 w-full'>
+        <header className=' dark:bg-black flex justify-center pt-5 px-4 w-full'>
             <div 
                 className='rounded-full flex items-center justify-between px-4 sm:px-6 w-full 
                 sm:w-[90%] md:w-[85%] h-16 border-2 border-t-[1px] shadow-lg 

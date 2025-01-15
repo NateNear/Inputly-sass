@@ -33,10 +33,10 @@ export default function DemoPage() {
     ];
 
     return (
-        <div className="relative min-h-screen bg-white overflow-hidden">
+        <div className="relative min-h-screen bg-white  dark:bg-black overflow-hidden">
             <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-100 rounded-full blur-[128px] opacity-60 animate-pulse" />
-                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-purple-100 rounded-full blur-[128px] opacity-60 animate-pulse" />
+                <div className="absolute top-32 right-0 w-[600px] h-[600px] dark:gradient-blob-1 dark:bg-purple-500/40 bg-indigo-100 rounded-full blur-[128px] opacity-60 animate-pulse" />
+                <div className="absolute -bottom-20 left-0 w-[1000px] h-[1000px] dark:gradient-blob-2 dark:bg-green-500/40 bg-purple-100 rounded-full blur-[128px] opacity-60 animate-pulse" />
             </div>
 
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
@@ -51,7 +51,7 @@ export default function DemoPage() {
                 </div>
 
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 mb-6">
+                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
                         Add User Feedback
                         <br />
                         <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
@@ -67,7 +67,7 @@ export default function DemoPage() {
                     {steps.map((step, index) => (
                         <div
                             key={index}
-                            className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+                            className="p-6 hover:scale-105 bg-white dark:bg-white/5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
                         >
                             <div className="flex flex-col items-center text-center space-y-4">
                                 <div className="p-3 bg-blue-100 rounded-full text-blue-600">
@@ -97,8 +97,8 @@ export default function DemoPage() {
                     </CardContent>
                 </Card>
 
-                <div className="bg-white/80 backdrop-blur border border-gray-200 rounded-xl shadow-lg p-8 mb-16">
-                    <h2 className="text-2xl font-bold mb-6">See it in Action</h2>
+                <div className="bg-white/80 dark:bg-slate-900 backdrop-blur border border-gray-200 rounded-xl shadow-lg p-8 mb-16">
+                    <h2 className="text-2xl dark:text-white font-bold mb-6">See it in Action</h2>
                     <div className="w-full h-full bg-gray-100 rounded-lg mb-6 flex items-center justify-center">
                         <Image 
                             src={demoGif}
