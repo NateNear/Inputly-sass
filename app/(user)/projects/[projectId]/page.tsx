@@ -50,6 +50,14 @@ const FeedbacksPage = async({ params }: { params: PageProps }) => {
             Feedback Dashboard
           </h1>
           <div className="flex items-center space-x-4">
+          <Link
+              href={`/insights/${projectId}`}
+              className="flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-xl hover:from-green-600 hover:to-teal-600 transition-all transform hover:scale-105 shadow-md"
+            >
+              <TrendingUp size={18} />
+              <span className="font-medium">View Insights</span>
+            </Link>
+
             <Link
               href={`/instructions/${projectId}`}
               className="flex items-center space-x-2 px-5 py-2.5 border-2 border-indigo-500 text-indigo-600 rounded-xl hover:bg-indigo-50 transition-all transform hover:scale-105"

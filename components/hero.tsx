@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Star, Sparkles } from "lucide-react";
-import './css/heroPage.css';
+// import './css/heroPage.css';
 import { GotToDashboardButton } from './goToDashboardButton';
 import { TryDemoButton } from './tryDemoButton';
 

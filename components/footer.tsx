@@ -1,6 +1,5 @@
 import React from 'react';
 import { Twitter, Github, Linkedin } from "lucide-react";
-import './css/heroPage.css';
 import Link from 'next/link';
 
 export default function Footer() {

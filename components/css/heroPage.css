@@ -68,7 +68,7 @@
     animation: scale-up 0.5s ease-out 0.6s forwards;
 }
 
-body {
+.hero {
     margin-top: 1rem;
     color: #999;
     font: 400 16px/1.5 'Exo', 'Ubuntu', 'Segoe UI', Helvetica, Arial, sans-serif;
@@ -77,7 +77,7 @@ body {
     animation: bg-scrolling-reverse 0.92s linear infinite;
 }
 
-body::before {
+.hero::before {
     content: "INPUTLY";
     font-size: 4rem;
     font-weight: 100;
