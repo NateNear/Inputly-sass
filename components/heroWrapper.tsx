@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import '@/components/css/heroPage.css';
 
-export function HeroWrapper({ children }) {
+export function HeroWrapper({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     document.body.classList.add('hero');
     return () => {
