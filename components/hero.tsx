@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from "@/components/ui/button";
 import { Star, Sparkles } from "lucide-react";
 // import './css/heroPage.css';
 import { GotToDashboardButton } from './goToDashboardButton';
