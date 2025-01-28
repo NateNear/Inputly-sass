@@ -2,6 +2,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 import './globals.css'
 import Header from '@/components/header'
 import { ThemeProvider } from "@/components/ui/theme-provider"
+import { dark, neobrutalism } from '@clerk/themes'
 
 export default function RootLayout({
   children,
@@ -11,7 +12,10 @@ export default function RootLayout({
 
 {
   return (
-    <ClerkProvider>
+    <ClerkProvider appearance={{
+      baseTheme: dark,
+      signIn: { baseTheme: neobrutalism },
+    }}>
       <html lang="en">
         <body>
         <ThemeProvider

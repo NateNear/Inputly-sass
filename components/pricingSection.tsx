@@ -2,6 +2,7 @@ import React from 'react';
 import { Check, X } from "lucide-react";
 import { SubscribeBtn } from '@/app/(user)/payments/pricingSectionBtn';
 import { monthlyPlanId, yearlyPlanId } from '@/lib/payments';
+import { BlurFade } from "@/components/ui/blur-fade";
 
 const PricingTier = ({ 
   name, 

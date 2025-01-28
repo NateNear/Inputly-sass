@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Button } from "@/components/ui/button";
 import { Pause, Play, RotateCcw } from "lucide-react";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 const GRID_SIZE = 20;
 const CELL_SIZE = 20;
@@ -99,11 +100,14 @@ export const SnakeGame = () => {
 
   return (
     <div className="flex flex-col items-center space-y-4 py-8 px-4">
-      <div className="text-center space-y-2 mb-4">
-        <h2 className="text-2xl font-bold">Take a Break with Snake</h2>
-        <p className="text-gray-500">Play while you wait!</p>
-      </div>
-      
+      <BlurFade delay={0.25 * 1} inView>
+        <div className="text-center space-y-2 mb-4">
+          <h2 className="text-2xl font-bold">Take a Break with Snake</h2>
+          <p className="text-gray-500">Play while you wait!</p>
+        </div>
+      </BlurFade>
+
+      <BlurFade delay={0.25 * 2} inView>
       <div className="relative">
         <div 
           className="grid bg-gray-900 border-2 border-gray-700 rounded-lg overflow-hidden"
@@ -131,6 +135,7 @@ export const SnakeGame = () => {
             }}
           />
         </div>
+        
 
         {gameOver && (
           <div className="absolute inset-0 bg-black/70 flex items-center justify-center rounded-lg">
@@ -144,6 +149,7 @@ export const SnakeGame = () => {
           </div>
         )}
       </div>
+      </BlurFade>
 
       <div className="flex items-center gap-4">
         <div className="text-lg font-semibold">Score: {score}</div>
@@ -163,5 +169,6 @@ export const SnakeGame = () => {
         </Button>
       </div>
     </div>
+    
   );
 };

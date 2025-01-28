@@ -3,6 +3,7 @@ import { Star, Sparkles } from "lucide-react";
 // import './css/heroPage.css';
 import { GotToDashboardButton } from './goToDashboardButton';
 import { TryDemoButton } from './tryDemoButton';
+import { BlurFade } from "@/components/ui/blur-fade";
 
 export default function Hero() {
     return (
@@ -12,9 +13,9 @@ export default function Hero() {
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] gradient-blob-1 bg-purple-500/20 dark:bg-purple-500/40 rounded-full blur-[128px]" />
                 <div className="absolute bottom-0 left-0 w-[600px] h-[600px] gradient-blob-2 bg-blue-500/20 dark:bg-blue-500/40 rounded-full blur-[128px]" />
             </div>
-
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
 
+            <BlurFade delay={0.25 * 1} inView>
                 <div className="flex flex-wrap justify-center items-center gap-3 mb-8 scale-up-animation">
                     <a
                         href="https://github.com/NateNear/Inputly-sass"
@@ -30,7 +31,8 @@ export default function Hero() {
                         Soon: AI-Powered Insights
                     </span>
                 </div>
-
+                </BlurFade>
+                <BlurFade delay={0.25 * 2} inView>
                 <div className="max-w-4xl mx-auto text-center mb-12 scale-up-animation">
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-black dark:from-white to-gray-700 dark:to-white/80">
                         Transform Customer
@@ -42,12 +44,14 @@ export default function Hero() {
                         Soon to be powered by advanced AI for deeper insights.
                     </p>
                 </div>
-
+                </BlurFade>
+                <BlurFade delay={0.25 * 3} inView>
                 <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16 ">
                     <GotToDashboardButton />
-        <TryDemoButton />
+                    <TryDemoButton />
                 </div>
-
+                </BlurFade>
+                <BlurFade delay={0.25 * 4} inView>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto scale-up-delay-3">
                     {[
                         {
@@ -75,7 +79,9 @@ export default function Hero() {
                         </div>
                     ))}
                 </div>
+                </BlurFade>
             </div>
+            
         </div>
     );
 }
