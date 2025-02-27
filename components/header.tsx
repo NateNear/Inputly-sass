@@ -54,10 +54,10 @@ function Header() {
                         />
                     )}
                     <SignedOut>
-                        <SignInButton>
+                        <SignInButton mode='modal'>
                             <Button variant="outline" className="sm:inline-flex">Log in</Button>
                         </SignInButton>
-                        <SignUpButton>
+                        <SignUpButton mode='modal'>
                             <Button className="sm:inline-flex">Sign up</Button>
                         </SignUpButton>
                     </SignedOut>

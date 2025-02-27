@@ -24,7 +24,7 @@ export async function ProjectList() {
       <div className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-6">
         <div className="flex justify-between items-center">
           <div className="space-y-1">
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-bold bg-black bg-clip-text text-transparent">
               Your Projects
             </h2>
             <div className="flex items-center space-x-2">
