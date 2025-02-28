@@ -81,8 +81,10 @@ export const PricingSection = () => {
             Choose the plan that&apos;s right for you
           </p>
         </div>
-
+      
+      <BlurFade delay={0.25 * 1} inView>
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <BlurFade delay={0.25 * 2} inView>
           <PricingTier
             name="Free"
             price="Free"
@@ -97,7 +99,8 @@ export const PricingSection = () => {
               { text: "Priority Support", included: false },
             ]}
           />
-
+        </BlurFade>
+        <BlurFade delay={0.25 * 2.5} inView>
           <PricingTier
             name="Pro"
             price="₹100"
@@ -113,7 +116,8 @@ export const PricingSection = () => {
               { text: "Custom Branding", included: false },
             ]}
           />
-
+          </BlurFade>
+          <BlurFade delay={0.25 * 3} inView>
           <PricingTier
             name="Enterprise"
             price="₹1000"
@@ -128,7 +132,9 @@ export const PricingSection = () => {
               { text: "Custom Branding", included: true },
             ]}
           />
+          </BlurFade>
         </div>
+        </BlurFade>
       </div>
     </div>
   );
