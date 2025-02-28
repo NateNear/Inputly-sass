@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Lightbulb, TrendingUp, MessageCircle, Target, AlertCircle } from "lucide-react";
+import { motion } from 'framer-motion';
 
 interface Theme {
   name: string;
@@ -214,18 +215,26 @@ export default function FeedbackAnalysisClient({ initialFeedbacks }: FeedbackAna
                 {tabs.map((tab) => {
                   const Icon = tab.icon;
                   return (
-                    <button
-                      key={tab.id}
-                      onClick={() => setActiveTab(tab.id)}
-                      className={`flex items-center space-x-2 px-4 py-2 rounded-md transition-all ${
-                        activeTab === tab.id
-                          ? "bg-white shadow-sm text-indigo-600"
-                          : "text-gray-600 hover:text-indigo-600"
-                      }`}
-                    >
-                      <Icon className="w-4 h-4" />
-                      <span className="font-medium">{tab.label}</span>
-                    </button>
+                      <motion.button
+                        key={tab.id}
+                        onClick={() => setActiveTab(tab.id)}
+                        className={`flex items-center space-x-2 px-4 py-2 rounded-md ${
+                          activeTab === tab.id
+                            ? "text-indigo-600"
+                            : "text-gray-600 hover:text-indigo-600"
+                        }`}
+                        whileHover={{ scale: 1.05, backgroundColor: "#F3F4F6" }}
+                        whileTap={{ scale: 0.95 }}
+                        animate={{
+                          backgroundColor: activeTab === tab.id ? "#FFFFFF" : "transparent",
+                          boxShadow: activeTab === tab.id ? "0px 2px 4px rgba(0, 0, 0, 0.1)" : "none",
+                        }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                          <Icon className="w-4 h-4" />
+
+                        <span className="font-medium">{tab.label}</span>
+                      </motion.button>
                   );
                 })}
               </div>
