@@ -46,7 +46,7 @@ function Header() {
             >  
                 <HeaderLogo/>
                 <div className='flex items-center gap-2 sm:gap-4'>
-                    <ModeToggle/>
+{/*                     <ModeToggle/> */}
                     {isDashboard && (
                         <CreateProject 
                             subscription={{ plan: subscriptionData?.subscription ?? '' }}
