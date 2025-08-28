@@ -22,7 +22,7 @@ export function HeaderButtons({ isDashboard, subscription, projectCount }: Heade
     console.log("dashboard", isDashboard, subscription, projectCount)
     return (
         <div className='flex items-center gap-2 sm:gap-4'>
-            <ModeToggle/>
+{/*             <ModeToggle/> */}
             {isDashboard && (
                 <CreateProject 
                     subscription={{ plan: subscription }}
